@@ -17,6 +17,9 @@
 	color: var(--white);
 	background-color: var(--primary);
 }
+.primary svg {
+	fill: var(--white);
+}
 .primary:hover {
 	filter: hue-rotate(-5deg) drop-shadow(2px 4px 6px var(--black));
 }
@@ -30,4 +33,16 @@
 	background-color: var(--primary);
 	filter: drop-shadow(2px 4px 6px var(--black));
 	border: none;
+}
+.ghost:hover svg {
+	fill: var(--white);
+}
+
+.arrow {
+	display: inline-block;
+	margin-left: 10px;
+}
+.down {
+	transform: rotate(90deg);
+	transition: all 200ms;
 }
