@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import s from './page.module.css';
 import type { Metadata } from 'next';
-import { Button, Htag, P } from './components';
+import { Button, Htag, P, Rating, Tag } from '../components';
 
 // export const metadata: Metadata = {
 // 	title: 'NEW Next JS Titlee',
@@ -31,6 +31,19 @@ export default function Home(): JSX.Element {
 			<P size="large">Большой</P>
 			<P size="medium">Средний</P>
 			<P size="small">Маленький</P>
+
+			<Tag size="s">GHOST</Tag>
+			<Tag size="m" color="red">
+				RED
+			</Tag>
+			<Tag size="s" color="green">
+				GREEN
+			</Tag>
+			<Tag color="primary">primary</Tag>
+			<Rating isEditable={true} rating={0}></Rating>
+			<Rating isEditable={true} rating={1}></Rating>
+			<Rating isEditable={true} rating={4}></Rating>
+			<Rating isEditable={true} rating={5}></Rating>
 		</div>
 	);
 }
