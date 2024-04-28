@@ -1,15 +1,24 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-	webpack(config, options) {
-		config.module.rules.push({
-			test: /\.svg$/i,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**.vkcs.cloud',
+                port: '',
+            },
+        ],
+    },
+    webpack(config, options) {
+        config.module.rules.push({
+            test: /\.svg$/i,
 
-			use: ['@svgr/webpack'],
-		});
+            use: ['@svgr/webpack'],
+        });
 
-		return config;
-	},
+        return config;
+    },
 };
 
 export default nextConfig;

@@ -2,6 +2,10 @@ import Image from 'next/image';
 import s from './page.module.css';
 import type { Metadata } from 'next';
 import { Button, Htag, P, Rating, Tag } from '../components';
+import { API } from '../api';
+import { MenuItem } from '@/interfaces/menu.interfaces';
+import { getMenu } from '@/api/menu';
+import { TopLevelCategory } from '@/interfaces/page.interface';
 
 // export const metadata: Metadata = {
 // 	title: 'NEW Next JS Titlee',
@@ -10,40 +14,44 @@ import { Button, Htag, P, Rating, Tag } from '../components';
 // };
 
 export async function generateMetadata(): Promise<Metadata> {
-	//... fetches
-	let arr = ['Next js', 'GenerateMetadata', 'SSR', 'ZolF'];
-	let title = 'Generated Next JS Titlee';
-	return {
-		title,
-		description: 'Generated Meta Data',
-		keywords: arr,
-	};
+    //... fetches
+    let arr = ['Next js', 'GenerateMetadata', 'SSR', 'ZolF'];
+    let title = 'Generated Next JS Titlee';
+    return {
+        title,
+        description: 'Generated Meta Data',
+        keywords: arr,
+    };
 }
 
-export default function Home(): JSX.Element {
-	return (
-		<div>
-			<Htag tag="h1">Header H1</Htag>
-			<Button appearence="primary">BUTTON</Button>
-			<Button appearence="ghost" arrow="right">
-				BUTTON
-			</Button>
-			<P size="large">Большой</P>
-			<P size="medium">Средний</P>
-			<P size="small">Маленький</P>
+// in new NEXT all pages & components may be async
+export default async function Home(): Promise<JSX.Element> {
+    const firstCategory = TopLevelCategory.Courses;
+    const menu = await getMenu(firstCategory);
+    return (
+        <div>
+            <Htag tag='h1'>Header H1</Htag>
+            <div>{JSON.stringify(menu)}</div>
+            <Button appearence='primary'>BUTTON</Button>
+            <Button appearence='ghost' arrow='right'>
+                BUTTON
+            </Button>
+            <P size='large'>Большой</P>
+            <P size='medium'>Средний</P>
+            <P size='small'>Маленький</P>
 
-			<Tag size="s">GHOST</Tag>
-			<Tag size="m" color="red">
-				RED
-			</Tag>
-			<Tag size="s" color="green">
-				GREEN
-			</Tag>
-			<Tag color="primary">primary</Tag>
-			<Rating isEditable={true} rating={0}></Rating>
-			<Rating isEditable={true} rating={1}></Rating>
-			<Rating isEditable={true} rating={4}></Rating>
-			<Rating isEditable={true} rating={5}></Rating>
-		</div>
-	);
+            <Tag size='s'>GHOST</Tag>
+            <Tag size='m' color='red'>
+                RED
+            </Tag>
+            <Tag size='s' color='green'>
+                GREEN
+            </Tag>
+            <Tag color='primary'>primary</Tag>
+            <Rating isEditable={true} rating={0}></Rating>
+            <Rating isEditable={true} rating={1}></Rating>
+            <Rating isEditable={true} rating={4}></Rating>
+            <Rating isEditable={true} rating={5}></Rating>
+        </div>
+    );
 }
