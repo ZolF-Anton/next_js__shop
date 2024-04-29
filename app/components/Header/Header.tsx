@@ -37,7 +37,7 @@ export const Header = ({ className, ...props }: HeaderProps): React.JSX.Element 
     return (
         <header className={cn(styles.header, className)} {...props}>
             <Logo />
-            <ButtonIcon appearance='white' icon='menu' onClick={() => setIsOpened(true)} />
+            <ButtonIcon appearence='white' icon='menu' onClick={() => setIsOpened(true)} />
 
             <motion.div
                 animate={isOpened ? 'opened' : 'closed'}
@@ -47,7 +47,7 @@ export const Header = ({ className, ...props }: HeaderProps): React.JSX.Element 
             >
                 {/* <Sidebar /> */}
                 <ButtonIcon
-                    appearance='white'
+                    appearence='white'
                     className={styles.menuClose}
                     icon='close'
                     onClick={() => setIsOpened(false)}

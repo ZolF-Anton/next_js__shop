@@ -11,15 +11,17 @@ export const metadata: Metadata = {
     keywords: ['Next js', 'SSR', 'ZolF', 'Search'],
 };
 
-export async function generateStaticParams() {
-    const firstCategory = TopLevelCategory.Courses;
-    const menu = await getMenu(firstCategory);
-    return [{ search: menu }];
-}
+// export async function generateStaticParams({ params }) {
+//     const firstCategory = TopLevelCategory.Courses;
+//     const menu = await getMenu(firstCategory);
+//     console.log('PageSearch :::StaticParams', params);
+//     return [{ search: menu }];
+// }
 
 export default async function PageSearch({ params }: { params: { search: string } }) {
     //const page = await getPage(params.alias);
     //if (!page) notFound();
+    console.log('PageSearch :::##########', params);
     return (
         <>
             <div className={s.news}>Search PAGE c alias {params.search}</div>
