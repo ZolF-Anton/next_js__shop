@@ -4,15 +4,15 @@ import close from './close.svg';
 import menu from './menu.svg';
 
 export const icons = {
-  up,
-  close,
-  menu,
+    up,
+    close,
+    menu,
 };
 
 export type IconName = keyof typeof icons;
 
 export interface ButtonIconProps
-  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  appearance: 'primary' | 'white';
-  icon: IconName;
+    extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    appearence: 'primary' | 'white';
+    icon: IconName;
 }

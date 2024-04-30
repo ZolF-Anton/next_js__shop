@@ -22,11 +22,8 @@ export * from './Card/Card';
 export * from './HhData/HhData';
 export * from './Product/Product';
 export * from './Divider/Divider';
+export * from './Textarea/Textarea';
 
-// export * from './ButtonIcon/ButtonIcon';
-
-// export * from './Textarea/Textarea';
-
-// export * from './Review/Review';
-// export * from './ReviewForm/ReviewForm';
+export * from './Review/Review';
+export * from './ReviewForm/ReviewForm';
 // export * from './Up/Up';
