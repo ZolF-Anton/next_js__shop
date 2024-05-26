@@ -4,7 +4,6 @@ import { motion, MotionProps } from 'framer-motion';
 import s from './Button.module.css';
 import cn from 'classnames';
 import ArrowIcon from './arrow.svg';
-import { ButtonHTMLAttributes } from 'react';
 
 type ButtonAccumProps = MotionProps & ButtonProps;
 
@@ -18,7 +17,7 @@ export const Button = ({
     return (
         <motion.button
             whileHover={{
-                scale: 1.05,
+                scale: 1.03,
             }}
             className={cn(s.button, className, s[appearence])}
             {...props}

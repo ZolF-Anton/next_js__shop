@@ -51,3 +51,6 @@ export const priceRuIntl = (price: number): string =>
         currency: 'RUB',
         minimumFractionDigits: 0,
     }).format(price);
+
+const regex: RegExp = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+export const isUrlValid = (url: string): boolean => regex.test(url);

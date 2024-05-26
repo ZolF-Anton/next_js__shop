@@ -38,7 +38,7 @@ export async function generateMetadata(
     let arr = ['Next js', 'GenerateMetadata', 'SSR', 'ZolF'];
     let title = params.alias;
     let description = `${params.type}  for ${params.alias}`;
-    //console.log('++++  TOP PAGE  generateMetadata', params, searchParams);
+
     return {
         title,
         description,
@@ -60,7 +60,6 @@ export default async function TopPage({ params }: GenStaticParmsProp) {
     const page = await getPage(params.alias);
     const products = page && (await getProducts(page.category));
 
-    console.log('++++  TOP PAGE  ::::::', params, page.category, products[0].title);
     if (!page || !pageUp) notFound();
     return (
         <>

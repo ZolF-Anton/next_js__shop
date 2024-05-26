@@ -45,8 +45,6 @@ const BuildSecondLevel = ({
     };
 
     const openSecondLevel = (secondCategory: string) => {
-        console.log(secondCategory);
-        console.log(menu);
         setMenu2(
             menu2.map((m) => {
                 if (m._id.secondCategory === secondCategory) {

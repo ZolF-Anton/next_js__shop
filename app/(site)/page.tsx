@@ -1,9 +1,5 @@
-import Image from 'next/image';
-import s from './page.module.css';
 import type { Metadata } from 'next';
 import { Button, Htag, P, Rating, Tag } from '../components';
-import { API } from '../api';
-import { MenuItem } from '@/interfaces/menu.interfaces';
 import { getMenu } from '@/api/menu';
 import { TopLevelCategory } from '@/interfaces/page.interface';
 

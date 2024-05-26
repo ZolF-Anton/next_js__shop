@@ -13,9 +13,6 @@ export function TopPageComponent({
     products,
     currentCategory,
 }: TopPageComponentProps): JSX.Element {
-    console.log('==========================');
-    console.log(products);
-    console.log('==========================');
     const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, {
         products,
         sort: SortEnum.Rating,

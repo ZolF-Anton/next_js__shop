@@ -6,7 +6,7 @@ import CloseIcon from './close.svg';
 import { useEffect, useState } from 'react';
 
 export const ReviewFormPanels = ({ error, setError }: ReviewFormPanelsProps): JSX.Element => {
-    const [isSuccess, setIsSuccess] = useState<boolean>(true);
+    const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
     useEffect(() => {
         setTimeout(() => {

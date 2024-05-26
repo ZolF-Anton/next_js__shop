@@ -7,7 +7,8 @@ import cn from 'classnames';
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from '..';
-import { priceRuIntl, declOfNum } from '@/helpers/helpers';
+import { priceRuIntl, declOfNum, isUrlValid } from '@/helpers/helpers';
+import purple from '@/app/shared/images/purple.webp';
 
 export const Product = motion(
     forwardRef(
@@ -38,12 +39,22 @@ export const Product = motion(
                     height: 0,
                 },
             };
+            console.log('Product****************');
+            console.log(product);
+            console.log(product.image);
+            console.log('Product****************');
 
             return (
                 <div className={className} {...props} ref={ref}>
                     <Card className={styles.product}>
                         <div className={styles.logo}>
-                            <Image alt={product.title} height={70} src={product.image} width={70} />
+                            <Image
+                                id={product._id}
+                                alt={product.title}
+                                height={70}
+                                src={isUrlValid(product.image) ? product.image : purple}
+                                width={70}
+                            />
                         </div>
 
                         <div className={styles.title}>{product.title}</div>

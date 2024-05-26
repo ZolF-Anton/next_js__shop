@@ -42,13 +42,6 @@ export default async function PageCoursesMain({
 
     if (!firstCategoryItem) notFound();
 
-    console.log('**PageCoursesMain**', params);
-    console.log(
-        '**firstCategoryItem**',
-        firstCategoryItem.id,
-        firstCategoryItem.route,
-        firstCategoryItem.name
-    );
     return (
         <>
             <div className={s.courses_main}>

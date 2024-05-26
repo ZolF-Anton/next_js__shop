@@ -37,36 +37,32 @@ export const ReviewForm = ({
     }, [isSuccess]);
 
     const onSubmit = async (formData: IReviewForm) => {
-        try {
-            await fetch(API.review.createDemo, {
-                // next: { revalidate: 10 },
-                method: 'POST',
-                body: JSON.stringify({
-                    ...formData,
-                    productId,
-                }),
-                headers: new Headers({ 'content-type': 'application/json' }),
+        fetch(API.review.createDemo, {
+            method: 'POST',
+            body: JSON.stringify({
+                ...formData,
+                productId,
+            }),
+            headers: new Headers({ 'content-type': 'application/json' }),
+            cache: 'no-store',
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                setError('Что-то пошло не так');
+                throw new Error('Something went wrong');
             })
-                .then((response) => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    setError('Что-то пошло не так');
-                    throw new Error('Something went wrong');
-                })
-                .then((responseJson: IReviewSentResponse) => {
-                    // Do something with the response
-                    setIsSuccess(true);
-                    reset();
-                    console.log('responseJson:::', responseJson);
-                })
-                .catch((error) => {
-                    setError('Что-то пошло не так');
-                    console.log('fetch error:::', error);
-                });
-        } catch (err: any) {
-            setError(err.message);
-        }
+            .then((responseJson: IReviewSentResponse) => {
+                // Do something with the response
+                setIsSuccess(true);
+                reset();
+                console.log('responseJson:::', responseJson);
+            })
+            .catch((error) => {
+                setError('Что-то пошло не так');
+                console.log('fetch error:::', error);
+            });
     };
 
     return (

@@ -8,6 +8,11 @@ const nextConfig = {
                 hostname: '**.vkcs.cloud',
                 port: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'http://**.bizmrg.com/courses-top-images',
+                port: '',
+            },
         ],
     },
     webpack(config, options) {

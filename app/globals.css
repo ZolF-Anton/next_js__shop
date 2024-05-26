@@ -24,12 +24,18 @@ a {
     --gray: #a4a4a4;
     --gray-dark: #6c7077;
     --white: white;
-    --primary-hover: #6344df;
+
+    --primary: #236d73;
+    --primary-hover: #21929b;
+    /* --primary: #7653fc;
+    --primary-hover: #6344df; */
+
     --red-light: #fea291;
-    --primary: #7653fc;
     --red: #fc836d;
+
     --green: #1dc37e;
     --green-light: #c8f8e4;
+
     --font-family: Jura, Verdana, Geneva, Tahoma, sans-serif;
     --bg: #f5f6f8;
 }
